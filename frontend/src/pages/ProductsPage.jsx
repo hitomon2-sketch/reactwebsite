@@ -44,6 +44,15 @@ const productsData = {
       weight: "100g",
       image: "/images/garam-masala.jpg",
       category: "spices"
+    },
+     {
+      id: "garam-masala",
+      name: "Garam Masala",
+      description: "Hand-roasted, robust flavour",
+      price: 199,
+      weight: "100g",
+      image: "/images/garam-masala.jpg",
+      category: "spices"
     }
   ],
   pulses: [
