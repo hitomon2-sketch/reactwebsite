@@ -1,0 +1,46 @@
+{
+  "whatsapp": {
+    "label": "WhatsApp",
+    "icon": "💬",
+    "link": "https://wa.me/919897185634",
+    "number": "+91 98971 85634",
+    "note": "Quick responses for orders & queries",
+    "bg": "bg-green-100",
+    "text": "text-green-600"
+  },
+  "phone": {
+    "label": "Phone",
+    "icon": "📞",
+    "link": "tel:+919897185634",
+    "number": "+91 98971 85634",
+    "note": "Mon-Sat, 10AM - 7PM",
+    "bg": "bg-blue-100",
+    "text": "text-blue-600"
+  },
+  "email": {
+    "label": "Email",
+    "icon": "✉️",
+    "link": "mailto:hello@gharka.in",
+    "number": "hello@gharka.in",
+    "note": "For detailed enquiries",
+    "bg": "bg-amber-100",
+    "text": "text-amber-600"
+  },
+  "location": {
+    "label": "Location",
+    "icon": "📍",
+    "address": "Your city, state",
+    "note": "Update this with your location",
+    "bg": "bg-red-100",
+    "text": "text-red-600"
+  },
+  "instagram": {
+    "label": "Instagram",
+    "icon": "📷",
+    "link": "https://instagram.com/ghar.ka",
+    "handle": "@ghar.ka",
+    "note": "Follow for updates & recipes",
+    "bg": "bg-pink-100",
+    "text": "text-pink-600"
+  }
+}
