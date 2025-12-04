@@ -1,0 +1,26 @@
+{
+  "id": "featured-products",
+  "title": "Featured Products",
+  "description": "Handpicked organic essentials crafted with purity, tradition, and honesty.",
+  "sortBy": "price-low",
+  "products": [
+    {
+      "id": 1,
+      "name": "Organic Wild Honey",
+      "price": 349,
+      "image": "https://organicindia.com/cdn/shop/files/Mulethi_ef370331-396d-4cf5-8995-dd277ad482f9_558X600_crop_center.jpg?v=1749102891"
+    },
+    {
+      "id": 2,
+      "name": "A2 Desi Cow Ghee",
+      "price": 799,
+      "image": "https://organicindia.com/cdn/shop/files/Mulethi_ef370331-396d-4cf5-8995-dd277ad482f9_558X600_crop_center.jpg?v=1749102891"
+    },
+    {
+      "id": 3,
+      "name": "Cold-Pressed Coconut Oil",
+      "price": 299,
+      "image": "https://organicindia.com/cdn/shop/files/Mulethi_ef370331-396d-4cf5-8995-dd277ad482f9_558X600_crop_center.jpg?v=1749102891"
+    }
+  ]
+}

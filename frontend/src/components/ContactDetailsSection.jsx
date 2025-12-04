@@ -1,3 +1,4 @@
+// src/components/ContactDetailsSection.jsx
 import ContactInfo from "./ContactInfo";
 
 export default function ContactDetailsSection() {

@@ -1,34 +1,43 @@
 import React from "react";
-// import Hero from "../components/Hero";
-// import Story from "../components/Story";
-// import WhyGharKa from "../components/WhyGharKa";
-// import TopProducts from "../components/TopProducts";
-import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Story from "../components/Story";
 import WhyGharKa from "../components/WhyGharKa";
-import TopProducts from "../components/TopProducts";
-import Footer from "../components/Footer";
-
-// Import Components
+import CategorySection from "../components/CategorySection";
+import { ReviewsList } from "../components/ReviewList";
+import ProductSection from "../components/ProductSection";
+import featured from "../data/featuredProducts.json";
+import mostLoved from "../data/mostLovedProducts.json";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
-
-      <main>
+      <main className="mt-20">
         <Hero />
-        <Story/>
-        <WhyGharKa/>
-        <TopProducts />
-        {/* <Categories /> */}
-        {/* <Testimonials /> */}
-        {/* <Instagram /> */}
-        {/* <BlogSection /> */}
-      </main>
+        <CategorySection />
 
-      <Footer />
+        <Story />
+
+        <ProductSection
+          id={mostLoved.id}
+          text_col="#2F5D3A"
+          title={mostLoved.title}
+          description={mostLoved.description}
+          products={mostLoved.products}
+          sortBy={mostLoved.sortBy}
+        />
+        <ProductSection
+          id={featured.id}
+          title={featured.title}
+          description={featured.description}
+          products={featured.products}
+          sortBy={featured.sortBy}
+        />
+        <WhyGharKa />
+
+        {/* CATEGORY SECTION HERE */}
+
+        <ReviewsList />
+      </main>
     </>
   );
 }

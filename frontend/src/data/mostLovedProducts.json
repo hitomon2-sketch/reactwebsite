@@ -1,0 +1,64 @@
+{
+  "id": "most-loved-products",
+  "title": "Most Loved Products",
+  "description": "Customers can’t get enough of these pure, homemade-style organic essentials. Crafted traditionally and loved nationwide.",
+  "sortBy": "featured",
+  "products": [
+    {
+      "id": 201,
+      "name": "A2 Desi Cow Ghee",
+      "price": 799,
+      "image": "https://organicindia.com/cdn/shop/files/Mulethi_ef370331-396d-4cf5-8995-dd277ad482f9_558X600_crop_center.jpg?v=1749102891",
+      "rating": 5
+    },
+    {
+      "id": 202,
+      "name": "Organic Wild Honey",
+      "price": 349,
+      "image": "https://organicindia.com/cdn/shop/files/Mulethi_ef370331-396d-4cf5-8995-dd277ad482f9_558X600_crop_center.jpg?v=1749102891",
+      "rating": 5
+    },
+    {
+      "id": 203,
+      "name": "Cold-Pressed Groundnut Oil",
+      "price": 289,
+      "image": "https://organicindia.com/cdn/shop/files/Mulethi_ef370331-396d-4cf5-8995-dd277ad482f9_558X600_crop_center.jpg?v=1749102891",
+      "rating": 4
+    },
+    {
+      "id": 204,
+      "name": "Homemade Mango Pickle",
+      "price": 199,
+      "image": "https://organicindia.com/cdn/shop/files/Mulethi_ef370331-396d-4cf5-8995-dd277ad482f9_558X600_crop_center.jpg?v=1749102891",
+      "rating": 5
+    },
+    {
+      "id": 205,
+      "name": "Organic Turmeric Powder",
+      "price": 159,
+      "image": "https://organicindia.com/cdn/shop/files/Mulethi_ef370331-396d-4cf5-8995-dd277ad482f9_558X600_crop_center.jpg?v=1749102891",
+      "rating": 5
+    },
+    {
+      "id": 206,
+      "name": "Organic Toor Dal",
+      "price": 149,
+      "image": "https://organicindia.com/cdn/shop/files/Mulethi_ef370331-396d-4cf5-8995-dd277ad482f9_558X600_crop_center.jpg?v=1749102891",
+      "rating": 4
+    },
+    {
+      "id": 207,
+      "name": "Pure Cow Milk Paneer",
+      "price": 249,
+      "image": "https://organicindia.com/cdn/shop/files/Mulethi_ef370331-396d-4cf5-8995-dd277ad482f9_558X600_crop_center.jpg?v=1749102891",
+      "rating": 5
+    },
+    {
+      "id": 208,
+      "name": "Organic Masala Combo",
+      "price": 499,
+      "image": "https://organicindia.com/cdn/shop/files/Mulethi_ef370331-396d-4cf5-8995-dd277ad482f9_558X600_crop_center.jpg?v=1749102891",
+      "rating": 5
+    }
+  ]
+}

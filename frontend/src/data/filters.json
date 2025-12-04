@@ -1,0 +1,39 @@
+{
+  "categories": [
+    {
+      "value": "all",
+      "label": "All Categories",
+      "image": "https://organicindia.com/cdn/shop/files/Mulethi_ef370331-396d-4cf5-8995-dd277ad482f9_558X600_crop_center.jpg?v=1749102891"
+    },
+    {
+      "value": "pickles",
+      "label": "Pickles",
+      "image": "https://organicindia.com/cdn/shop/files/Mulethi_ef370331-396d-4cf5-8995-dd277ad482f9_558X600_crop_center.jpg?v=1749102891"
+    },
+    {
+      "value": "ghee",
+      "label": "Ghee",
+      "image": "https://organicindia.com/cdn/shop/files/Mulethi_ef370331-396d-4cf5-8995-dd277ad482f9_558X600_crop_center.jpg?v=1749102891"
+    },
+    {
+      "value": "spices",
+      "label": "Spices",
+      "image": "https://organicindia.com/cdn/shop/files/Mulethi_ef370331-396d-4cf5-8995-dd277ad482f9_558X600_crop_center.jpg?v=1749102891"
+    },
+    {
+      "value": "pulses",
+      "label": "Pulses",
+      "image": "https://organicindia.com/cdn/shop/files/Mulethi_ef370331-396d-4cf5-8995-dd277ad482f9_558X600_crop_center.jpg?v=1749102891"
+    },
+    {
+      "value": "honey",
+      "label": "Honey",
+      "image": "https://organicindia.com/cdn/shop/files/Mulethi_ef370331-396d-4cf5-8995-dd277ad482f9_558X600_crop_center.jpg?v=1749102891"
+    }
+  ],
+  "sortOptions": [
+    { "value": "featured", "label": "Sort by: Featured" },
+    { "value": "price-low", "label": "Price: Low to High" },
+    { "value": "price-high", "label": "Price: High to Low" }
+  ]
+}

@@ -1,130 +1,236 @@
 import React, { useState } from "react";
 import { useCart } from "../context/CartContext";
-import Notification from "../components/Notification";
-import EmptyCart from "../components/EmptyCart";
-import CartItem from "../components/CartItem";
-import OrderSummary from "..//components/OrderSummary";
+import { Notification } from "../components/Notification";
+import { Link } from "react-router-dom";
 
-export default function CartPage() {
-  const { cartItems, clearCart, getCartTotal } = useCart();
-  const [notification, setNotification] = useState(null);
-  console.log(cartItems)
+const CartPage = () => {
+  const { items, total, updateQuantity, removeFromCart, clearCart } = useCart();
+  const [isProcessing, setIsProcessing] = useState(false);
 
-  const handlePlaceOrder = () => {
-    if (cartItems.length === 0) {
-      setNotification({
-        message: "Your cart is empty!",
-        type: "error"
-      });
-      return;
-    }
+  const [notification, setNotification] = useState({
+    message: "",
+    type: "success",
+  });
 
-    const whatsappNumber = "919897185634";
-    let text = "🌟 *NEW ORDER - GHAR KA* 🌟\n\n";
-    text += "Here's my order:\n\n";
-
-    cartItems.forEach((item, index) => {
-      text += `🍯 *${item.name}*\n`;
-      text += `   Quantity: ${item.quantity}\n`;
-      text += `   Price: ₹${item.price} x ${item.quantity} = ₹${item.price * item.quantity}\n`;
-      text += `   ${item.weight || ''}\n\n`;
-    });
-
-    const total = getCartTotal();
-    text += `💰 *Total Amount: ₹${total}*\n\n`;
-    text += "Please confirm my order and provide delivery details. Thank you! 🙏";
-
-    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
-    window.open(url, "_blank");
-
-    setNotification({
-      message: "Order placed! Redirecting to WhatsApp...",
-      type: "success"
-    });
-    
-    // Clear cart after a delay
-    setTimeout(() => {
-      clearCart();
-    }, 2000);
+  const showNotification = (message, type = "success") => {
+    setNotification({ message, type });
+    setTimeout(() => setNotification({ message: "", type }), 2200);
   };
 
-  if (cartItems.length === 0) {
-    return <EmptyCart />;
+  const DELIVERY_FEE = 50;
+  const grandTotal = total + DELIVERY_FEE;
+
+  const buildWhatsAppMessage = () => {
+    if (items.length === 0) return "";
+
+    const itemsText = items
+      .map(
+        (item) =>
+          `*${item.name}* (${item.variantLabel})\n` +
+          `   ├ Qty: ${item.quantity} × ₹${item.unitPrice}\n` +
+          `   └ *Total: ₹${item.unitPrice * item.quantity}*`
+      )
+      .join("\n\n");
+
+    const message = [
+      "✨ ROYAL SWEETS ORDER ✨",
+      "",
+      "📝 ORDER SUMMARY",
+      "▬▬▬▬▬▬▬▬▬▬▬▬",
+      "",
+      itemsText,
+      "",
+      "▬▬▬▬▬▬▬▬▬▬▬▬",
+      "",
+      "💰 ORDER VALUE",
+      `├ Subtotal: ₹${total}`,
+      `├ Delivery: ₹${DELIVERY_FEE}`,
+      `└ *GRAND TOTAL: ₹${grandTotal}*`,
+      "",
+      "📌 PLEASE PROVIDE:",
+      "├ Delivery Address",
+      "├ Contact Number",
+      "└ Preferred Time",
+      "",
+      "Thank you! ❤️",
+      "We'll confirm your order shortly",
+    ].join("\n");
+
+    return encodeURIComponent(message);
+  };
+
+  const businessNumber = "917417408974";
+  const whatsappLink = `https://wa.me/${businessNumber}?text=${buildWhatsAppMessage()}`;
+
+  const handleWhatsAppClick = () => {
+    setIsProcessing(true);
+    showNotification("Opening WhatsApp…");
+    setTimeout(() => setIsProcessing(false), 1800);
+  };
+
+  // Empty Cart
+  if (items.length === 0) {
+    return (
+      <div className="min-h-[60vh] mt-28 flex flex-col items-center justify-center px-4">
+        <div className="max-w-md w-full text-center bg-[#FFF9ED] border border-[#E8DCC2] rounded-xl p-8 shadow-md">
+          <img
+            src="https://organicindia.com/cdn/shop/files/elements.png?v=1667824817"
+            alt="Empty Cart Illustration"
+            className="w-20 h-20 mx-auto mb-6 opacity-90"
+          />
+
+          <h2 className="text-2xl font-serif mb-3 text-[#4A2E1A]">
+            Your cart is empty
+          </h2>
+          <p className="text-[#7A6042] mb-6">
+            Looks like you haven't added any sweets yet.
+          </p>
+
+          <Link
+            to="/products"
+            className="inline-block px-6 py-3 bg-[#5C3A21] text-white font-serif rounded-lg shadow hover:bg-[#4A2E1A] transition">
+            Explore Products
+          </Link>
+        </div>
+      </div>
+    );
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-amber-50 to-white py-8">
-      {notification && (
-        <Notification
-          message={notification.message}
-          type={notification.type}
-          onClose={() => setNotification(null)}
-        />
-      )}
+    <div className="min-h-[60vh] mt-20  md:px-6 md:py-10 bg-[#FFF9ED]">
+      <Notification message={notification.message} type={notification.type} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto bg-[#FFFCF5]  overflow-hidden">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Your Shopping Cart
-          </h1>
-          <p className="text-lg text-gray-600">
-            Review your items and proceed to checkout
+        <div className="bg-gradient-to-r from-[#FFF4E8] to-[#FAEEDC] p-6 border-b border-[#E8DCC2]">
+          <h2 className="text-3xl font-serif text-[#4A2E1A]">
+            Items in your cart
+          </h2>
+          <p className="text-[#7A6042] mt-1 text-sm">
+            {items.reduce((s, i) => s + i.quantity, 0)} items
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Cart Items */}
-          <div className="lg:col-span-2">
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-semibold text-gray-900">
-                  Cart Items ({cartItems.length})
-                </h2>
+        {/* Items */}
+        <div className="bg-white">
+          {items.map((item) => (
+            <div
+              key={`${item.id}-${item.variantLabel}`}
+              className="p-6 flex flex-col sm:flex-row justify-between items-start">
+              {/* Left section */}
+              <div className="flex items-start gap-4 w-full sm:w-auto mb-4 sm:mb-0">
+                <div className="w-16 h-16  overflow-hidden bg-white shadow-inner flex items-center justify-center">
+                  {item.image ? (
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <span className="text-[#D4AF37] text-xl">🍬</span>
+                  )}
+                </div>
+
+                <div>
+                  <div className="font-serif text-lg text-[#4A2E1A] font-semibold">
+                    {item.name}
+                  </div>
+                  <div className="text-sm text-[#7A6042]">
+                    {item.variantLabel} • ₹{item.unitPrice}
+                  </div>
+                </div>
+              </div>
+
+              {/* Right section */}
+              <div className="flex items-center gap-6 w-full sm:w-auto justify-between sm:justify-normal">
+                {/* Quantity */}
+                <div className="flex items-center border border-[#E8DCC2] rounded-full overflow-hidden">
+                  <button
+                    onClick={() =>
+                      updateQuantity(
+                        item.id,
+                        item.variantLabel,
+                        item.quantity - 1
+                      )
+                    }
+                    disabled={item.quantity <= 1}
+                    className="px-3 py-1 text-[#4A2E1A] disabled:opacity-40">
+                    −
+                  </button>
+                  <div className="px-4 text-[#4A2E1A]">{item.quantity}</div>
+                  <button
+                    onClick={() =>
+                      updateQuantity(
+                        item.id,
+                        item.variantLabel,
+                        item.quantity + 1
+                      )
+                    }
+                    className="px-3 py-1 text-[#4A2E1A]">
+                    +
+                  </button>
+                </div>
+
+                <div className="font-bold text-[#4A2E1A] min-w-[5rem] text-right">
+                  ₹{item.unitPrice * item.quantity}
+                </div>
+
                 <button
-                  onClick={clearCart}
-                  className="text-red-500 hover:text-red-700 text-sm font-medium flex items-center space-x-1 transition-colors"
-                >
-                  <span>🗑️</span>
-                  <span>Clear All</span>
+                  onClick={() => {
+                    removeFromCart(item.id, item.variantLabel);
+                    showNotification(`${item.name} removed`);
+                  }}
+                  className="text-[#7A6042] hover:text-red-500 text-lg">
+                  🗑
                 </button>
               </div>
+            </div>
+          ))}
+        </div>
 
-              <div className="space-y-4">
-                {cartItems.map((item) => (
-                  <CartItem key={item.id} item={item} />
-                ))}
-              </div>
+        {/* Summary */}
+        <div className="p-6 bg-[#FAF3E7] border-t border-[#E8DCC2]">
+          <div className="space-y-3">
+            <div className="flex justify-between text-[#5C4D3D]">
+              <span>Subtotal</span>
+              <span className="font-medium">₹{total}</span>
             </div>
 
-            {/* Delivery Info */}
-            <div className="bg-amber-50 rounded-2xl border border-amber-200 p-6 mt-6">
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <span className="text-amber-600 text-xl">🚚</span>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">
-                    Free Delivery
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    Enjoy free delivery on all orders above ₹500. Orders are typically delivered within 2-5 business days.
-                  </p>
-                </div>
-              </div>
+            <div className="flex justify-between text-[#5C4D3D]">
+              <span>Delivery</span>
+              <span className="font-medium">₹{DELIVERY_FEE}</span>
+            </div>
+
+            <div className="border-t border-[#E8DCC2] pt-3 flex justify-between text-xl font-bold text-[#4A2E1A]">
+              <span>Grand Total</span>
+              <span>₹{grandTotal}</span>
             </div>
           </div>
 
-          {/* Order Summary */}
-          <div className="lg:col-span-1">
-            <OrderSummary 
-              cartItems={cartItems} 
-              total={getCartTotal()} 
-              onPlaceOrder={handlePlaceOrder} 
-            />
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 mt-6">
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleWhatsAppClick}
+              className="flex-1 px-6 py-3 bg-green-600 text-white rounded-lg font-semibold shadow hover:bg-green-700 transition">
+              {isProcessing ? "Preparing..." : "Confirm on WhatsApp"}
+            </a>
+
+            <button
+              onClick={() => {
+                clearCart();
+                showNotification("Cart cleared");
+              }}
+              className="flex-1 px-6 py-3 border border-[#DCC9A9] text-[#4A2E1A] rounded-lg bg-white hover:bg-[#FBF5EA] transition shadow-sm">
+              Clear Sweet Box
+            </button>
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
-}
+};
+
+export default CartPage;

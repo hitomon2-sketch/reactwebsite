@@ -1,207 +1,201 @@
-import React from "react";
+import { logo } from "../assets/images";
 
-export default function Footer() {
+const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
-      {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+    <footer className="bg-white text-green-800 py-16 px-4 sm:px-6 lg:px-8 border-t border-green-200">
+      <div className="max-w-7xl mx-auto">
+        {/* Decorative Line */}
+        <div className="flex justify-center mb-12">
+          <div className="w-32 h-1 bg-gradient-to-r from-green-600 via-green-400 to-green-600 rounded-full"></div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
           {/* Brand Column */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">GK</span>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold">GHAR KA</h3>
-                <p className="text-amber-200 text-sm">Pure. Homemade. Authentic.</p>
-              </div>
+          <div className="lg:col-span-2">
+            <div className="flex items-center mb-6">
+              <img src={logo} alt="Ghar Ka Shop" className="h-12" />
+              <span className="ml-3 text-3xl font-serif tracking-wider text-green-700">
+                Ghar Ka Shop
+              </span>
             </div>
-            <p className="text-gray-300 text-sm mb-6 leading-relaxed">
-              Bringing the warmth of homemade Indian food to your kitchen with 
-              traditional recipes, natural ingredients, and lots of love.
+
+            <p className="text-green-600 mb-6 italic font-light">
+              "Pure. Organic. Handpicked essentials for a healthier lifestyle."
             </p>
-            
-            {/* Social Links */}
-            <div className="flex space-x-4">
-              {[
-                { name: 'Instagram', icon: '📷', url: 'https://instagram.com/ghar.ka' },
-                { name: 'Facebook', icon: '👥', url: 'https://facebook.com/gharka' },
-                { name: 'WhatsApp', icon: '💬', url: 'https://wa.me/919897185634' },
-                { name: 'YouTube', icon: '🎥', url: 'https://youtube.com/@gharka' }
-              ].map((social) => (
-                <a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-amber-600 transition-colors duration-300"
-                  aria-label={social.name}
-                >
-                  <span className="text-sm">{social.icon}</span>
-                </a>
-              ))}
-            </div>
-          </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-amber-100">Quick Links</h4>
-            <ul className="space-y-3">
-              {[
-                { name: 'Home', href: '/' },
-                { name: 'All Products', href: '/products' },
-                { name: 'Pickles', href: '/products#pickles' },
-                { name: 'Ghee', href: '/products#ghee' },
-                { name: 'Spices', href: '/products#spices' },
-                { name: 'About Us', href: '/about' }
-              ].map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-amber-400 transition-colors duration-200 text-sm"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Categories */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-amber-100">Categories</h4>
-            <ul className="space-y-3">
-              {[
-                { name: 'Achar (Pickles)', count: '12+' },
-                { name: 'Ghee & Oils', count: '8+' },
-                { name: 'Masale (Spices)', count: '15+' },
-                { name: 'Dals & Pulses', count: '10+' },
-                { name: 'Honey & Sweets', count: '6+' },
-                { name: 'Ready Mixes', count: '5+' }
-              ].map((category) => (
-                <li key={category.name} className="flex justify-between items-center">
-                  <a
-                    href={`/products#${category.name.toLowerCase().split(' ')[0]}`}
-                    className="text-gray-300 hover:text-amber-400 transition-colors duration-200 text-sm"
-                  >
-                    {category.name}
-                  </a>
-                  <span className="text-xs bg-gray-800 px-2 py-1 rounded-full text-amber-200">
-                    {category.count}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact & Newsletter */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-amber-100">Stay Updated</h4>
-            
-            {/* Contact Info */}
-            <div className="space-y-3 mb-6">
-              <div className="flex items-center space-x-3">
-                <span className="w-5 h-5 text-amber-400">📞</span>
-                <a
-                  href="tel:+919897185634"
-                  className="text-gray-300 hover:text-amber-400 transition-colors text-sm"
-                >
-                  +91 98971 85634
-                </a>
-              </div>
-              <div className="flex items-center space-x-3">
-                <span className="w-5 h-5 text-amber-400">✉️</span>
-                <a
-                  href="mailto:hello@gharka.in"
-                  className="text-gray-300 hover:text-amber-400 transition-colors text-sm"
-                >
-                  hello@gharka.in
-                </a>
-              </div>
-              <div className="flex items-center space-x-3">
-                <span className="w-5 h-5 text-amber-400">🕒</span>
-                <span className="text-gray-300 text-sm">10AM - 7PM, Mon-Sat</span>
-              </div>
-            </div>
-
-            {/* Newsletter */}
-            <div className="bg-gray-800 rounded-lg p-4">
-              <p className="text-amber-100 text-sm font-medium mb-2">Get recipes & offers</p>
-              <form className="space-y-2">
-                <input
-                  type="email"
-                  placeholder="Your email address"
-                  className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
-                />
-                <button
-                  type="submit"
-                  className="w-full bg-amber-600 text-white py-2 rounded text-sm font-medium hover:bg-amber-700 transition-colors duration-200"
-                >
-                  Subscribe
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-
-        {/* Trust Badges */}
-        <div className="border-t border-gray-800 mt-8 pt-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-            {[
-              { icon: '🌱', text: '100% Natural' },
-              { icon: '👵', text: 'Family Recipes' },
-              { icon: '🚚', text: 'Free Shipping*' },
-              { icon: '💝', text: 'Made with Love' }
-            ].map((badge) => (
-              <div key={badge.text} className="flex flex-col items-center">
-                <span className="text-2xl mb-2">{badge.icon}</span>
-                <span className="text-amber-200 text-sm font-medium">{badge.text}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            {/* Copyright */}
-            <div className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} GHAR KA. All rights reserved.
-            </div>
-
-            {/* Legal Links */}
+            {/* Social Icons */}
             <div className="flex space-x-6">
-              {[
-                { name: 'Privacy Policy', href: '/privacy' },
-                { name: 'Terms of Service', href: '/terms' },
-                { name: 'Shipping Policy', href: '/shipping' },
-                { name: 'Refund Policy', href: '/refunds' }
-              ].map((link) => (
+              {["facebook", "instagram", "twitter"].map((social) => (
                 <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-gray-400 hover:text-amber-400 transition-colors text-sm"
-                >
-                  {link.name}
+                  key={social}
+                  href="#"
+                  className="text-green-700 hover:text-green-500 transition-transform hover:scale-110">
+                  <svg
+                    className="h-6 w-6"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"></svg>
                 </a>
               ))}
             </div>
+          </div>
 
-            {/* Payment Methods */}
-            <div className="flex items-center space-x-2">
-              <span className="text-gray-400 text-sm mr-2">We accept:</span>
-              <div className="flex space-x-1">
-                {['💳', '📱', '🏦', '🔗'].map((method, index) => (
-                  <span key={index} className="text-lg">{method}</span>
-                ))}
+          {/* Explore */}
+          <div>
+            <h4 className="text-xl font-serif font-semibold mb-6 text-green-700 border-b border-green-600 pb-2">
+              Explore
+            </h4>
+            <ul className="space-y-3">
+              {[
+                "About Us",
+                "Organic Products",
+                "Healthy Living",
+                "Eco-Friendly Packs",
+              ].map((item) => (
+                <li key={item}>
+                  <a
+                    href="#"
+                    className="hover:text-green-600 transition flex items-center">
+                    <svg
+                      className="h-3 w-3 mr-2 text-green-600"
+                      fill="currentColor"
+                      viewBox="0 0 20 20">
+                      <path
+                        fillRule="evenodd"
+                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Customer Care */}
+          <div>
+            <h4 className="text-xl font-serif font-semibold mb-6 text-green-700 border-b border-green-600 pb-2">
+              Customer Care
+            </h4>
+            <ul className="space-y-3">
+              {[
+                "Support",
+                "Delivery Info",
+                "Refund Policy",
+                "Health & Safety",
+              ].map((item) => (
+                <li key={item}>
+                  <a
+                    href="#"
+                    className="hover:text-green-600 transition flex items-center">
+                    <svg
+                      className="h-3 w-3 mr-2 text-green-600"
+                      fill="currentColor"
+                      viewBox="0 0 20 20">
+                      <path
+                        fillRule="evenodd"
+                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="text-xl font-serif font-semibold mb-6 text-green-700 border-b border-green-600 pb-2">
+              Contact Us
+            </h4>
+            <address className="not-italic space-y-4 text-green-800">
+              <div className="flex items-start">
+                <svg
+                  className="h-5 w-5 mt-1 mr-3 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <span>
+                  21 Green Valley Road,
+                  <br />
+                  Dehradun, Uttarakhand 248001
+                </span>
               </div>
+
+              <div className="flex items-center">
+                <svg
+                  className="h-5 w-5 mr-3 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+                +91 98765 43210
+              </div>
+
+              <div className="flex items-center">
+                <svg
+                  className="h-5 w-5 mr-3 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+                support@gharkashop.in
+              </div>
+            </address>
+          </div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="border-t border-green-200 mt-16 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center text-green-700">
+            <p className="text-sm mb-4 md:mb-0">
+              © {new Date().getFullYear()} Ghar Ka Shop. Pure & Organic
+              Essentials.
+            </p>
+
+            <div className="flex space-x-6">
+              <a href="#" className="hover:text-green-600 text-sm">
+                Privacy Policy
+              </a>
+              <a href="#" className="hover:text-green-600 text-sm">
+                Terms of Service
+              </a>
+              <a href="#" className="hover:text-green-600 text-sm">
+                Sitemap
+              </a>
             </div>
           </div>
         </div>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;
