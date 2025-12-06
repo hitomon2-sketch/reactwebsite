@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Ananya Patel",
+    "quote": "Absolutely loved the Organic Honey! Pure, raw, and incredibly flavorful. Easily the best I've tasted.",
+    "rating": 5,
+    "product": "Organic Wild Honey"
+  },
+  {
+    "name": "Sandeep Yadav",
+    "quote": "The cold-pressed oil quality is top-notch. You can actually smell the freshness and purity.",
+    "rating": 4,
+    "product": "Cold-Pressed Groundnut Oil"
+  },
+  {
+    "name": "Meera Iyer",
+    "quote": "These organic spices are so aromatic! My entire kitchen smelled heavenly when I opened the box.",
+    "rating": 5,
+    "product": "Organic Spices Combo"
+  },
+  {
+    "name": "Rohit Chawla",
+    "quote": "Fresh, clean, and chemical-free pulses. I could feel the difference in taste immediately.",
+    "rating": 4,
+    "product": "Organic Toor Dal"
+  },
+  {
+    "name": "Priya Nair",
+    "quote": "Amazing quality! The A2 ghee feels authentic and rich. Perfect for daily diet and Ayurveda.",
+    "rating": 5,
+    "product": "A2 Desi Cow Ghee"
+  }
+]

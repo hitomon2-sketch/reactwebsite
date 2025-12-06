@@ -1,0 +1,95 @@
+{
+  "pickles": [
+    {
+      "id": "mango-pickle",
+      "name": "Mango Pickle",
+      "description": "Classic aam ka achar in mustard oil",
+      "price": { "1kg": 449, "500g": 240 },
+      "weight": "400g",
+      "image": "https://organicindia.com/cdn/shop/files/Mulethi_ef370331-396d-4cf5-8995-dd277ad482f9_558X600_crop_center.jpg?v=1749102891",
+      "category": "pickles",
+      "variants": [1, 2]
+    },
+       {
+      "id": "5859585",
+      "name": "Mango Pickle",
+      "description": "Classic aam ka achar in mustard oil",
+      "price": { "1kg": 449, "500g": 240 },
+      "weight": "400g",
+      "image": "https://organicindia.com/cdn/shop/files/Mulethi_ef370331-396d-4cf5-8995-dd277ad482f9_558X600_crop_center.jpg?v=1749102891",
+      "category": "pickles",
+      "variants": [1, 2]
+    },
+    {
+      "id": "mixed-veg-pickle",
+      "name": "Mixed Veg Pickle",
+      "description": "Carrot, chilli, lemon and more",
+      "price": 239,
+      "weight": "400g",
+      "image": "https://organicindia.com/cdn/shop/files/Amla_powder_for_hair_558X600_crop_center.jpg?v=1753442241",
+      "category": "pickles"
+    }
+  ],
+  "ghee": [
+    {
+      "id": "bilona-ghee",
+      "name": "Bilona Cow Ghee",
+      "description": "Slow-churned, rich and aromatic",
+      "price": 649,
+      "weight": "500ml",
+      "image": "https://organicindia.com/cdn/shop/files/Mulethi_ef370331-396d-4cf5-8995-dd277ad482f9_558X600_crop_center.jpg?v=1749102891",
+      "category": "ghee"
+    },
+        {
+      "id": "bilona-ghee",
+      "name": "Bilona Cow Ghee",
+      "description": "Slow-churned, rich and aromatic",
+      "price": 649,
+      "weight": "500ml",
+      "image": "https://organicindia.com/cdn/shop/files/Mulethi_ef370331-396d-4cf5-8995-dd277ad482f9_558X600_crop_center.jpg?v=1749102891",
+      "category": "ghee"
+    }
+  ],
+  "spices": [
+    {
+      "id": "garam-masala-1",
+      "name": "Garam Masala",
+      "description": "Hand-roasted, robust flavour",
+      "price": 199,
+      "weight": "100g",
+      "image": "https://organicindia.com/cdn/shop/files/Mulethi_ef370331-396d-4cf5-8995-dd277ad482f9_558X600_crop_center.jpg?v=1749102891",
+      "category": "spices"
+    },
+    {
+      "id": "garam-masala-2",
+      "name": "Garam Masala Premium",
+      "description": "Small-batch roasted, deeper aroma",
+      "price": 229,
+      "weight": "100g",
+      "image": "[https://i.imgur.com/V7TJ1tQ.jpeg](https://i.imgur.com/V7TJ1tQ.jpeg)",
+      "category": "spices"
+    }
+  ],
+  "pulses": [
+    {
+      "id": "comfort-dal",
+      "name": "Comfort Dal Mix",
+      "description": "A homely mix for everyday dal",
+      "price": 149,
+      "weight": "500g",
+      "image": "[https://i.imgur.com/63B9hxx.jpeg](https://i.imgur.com/63B9hxx.jpeg)",
+      "category": "pulses"
+    }
+  ],
+  "honey": [
+    {
+      "id": "raw-honey",
+      "name": "Raw Forest Honey",
+      "description": "Slow-filtered, floral and rich",
+      "price": 299,
+      "weight": "350g",
+      "image": "[https://i.imgur.com/JOzjkEi.jpeg](https://i.imgur.com/JOzjkEi.jpeg)",
+      "category": "honey"
+    }
+  ]
+}

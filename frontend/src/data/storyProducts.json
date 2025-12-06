@@ -1,0 +1,20 @@
+[
+  {
+    "image": "https://i.ytimg.com/vi/1GpO6tUuVvc/maxresdefault.jpg",
+    "name": "Sun-cured pickles"
+  },
+  {
+    "image": "https://www.ishtaorganics.in/cdn/shop/files/IMG_0577_2048x2048.jpg?v=1710887167",
+    "name": "Hand-churned ghee"
+  },
+  {
+    "image": "https://indianaorganic.in/cdn/shop/files/26.png?v=1700756481",
+    "name": "Freshly ground masale",
+    "price": "₹349",
+    "tag": "Organic"
+  },
+  {
+    "image": "https://www.ishtaorganics.in/cdn/shop/files/IMG_0577_2048x2048.jpg?v=1710887167",
+    "name": "Pulses and dals"
+  }
+]

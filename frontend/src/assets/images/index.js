@@ -1,0 +1,1 @@
+export const logo="https://organicindia.com/cdn/shop/files/logo-120x120_2.jpg?v=1743768667"
