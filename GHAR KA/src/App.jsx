@@ -17,7 +17,6 @@ export default function App() {
 
         {/* Products Page */}
         <Route path="/products" element={<Products />} />
-                <Route path="/cart" element={<CartPage />} />
 
 
         {/* Blog Page */}
